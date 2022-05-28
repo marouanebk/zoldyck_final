@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yourabatt</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/yourabatt.css' %}">
+</head>
+<body>
+    
+    <section class=" text-center py-5" style="padding-left:650px;padding-top:100px" >
+        <h1 style="margin-left:-25px;font-size:40px;color:#019267;">Votre abatteurs</h1>
+        <div style="padding-left:240px;">
+        <input type="search" id="gsearch" name="gsearch" placeholder="Rechercher" style="height:40px;color:#F6F8FF;border-radius:20px;border:0px solid;width:250px;padding-left:15px;background-color:#019267">
+        
+        <button style="height:40px;color:#F6F8FF;border-radius:20px;border:0px solid;width:60px;padding-left:5px;background-color:#019267;" ><i class="bi bi-plus" style="font-size:18px;"></i></button>
+        
+        </div>   
+    </section>    
+{% for element in list%}
+    <div class="container-fluid" style="padding-left:10vw;padding-top:40px;display:flex; flex-direction:column;">
+    <div style="width: 80vw; height:203px;border-radius: 90px; border:6.5px solid #019267;padding-left:30px;">
+        <div style="padding-top:30px">
+        <p style="color:#019267; font-size:20px">Nom : {{element.prenom}} {{element.nom}}</p>
+        <p style="color:#019267; font-size:20px">Location: {{element.location}}</p>
+        <p style="color:#019267; font-size:20px">Offrande: {{element.taken}}/{{element.limit}}</p>
+        </div>
+        <div style="padding-left:66.3vw;margin-top:-171px;">
+        <button style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:74.5px 74.5px 0px 0px ;border:0px solid; width:200px;height:100px; "><a style="text-decoration:none; color: white;" href="association/edit/{{element.id}}">modifier</a></button>
+        </div>  
+        <div style="padding-left:66.3vw;margin-top:10px;">
+            <button style="color:#F6F8FF; font-size:40px;background-color:#E76061;border-radius:0px 0px 74.5px 74.5px;border:0px solid; width:200px;height:80px;font-size:32px "><a style="text-decoration:none; color: white;" href="association/delete/{{element.id}}">supprimer</a></button>
+            </div>           
+    </div>  
+</div>
+{% endfor %}
+
+
+</body>
+</html>

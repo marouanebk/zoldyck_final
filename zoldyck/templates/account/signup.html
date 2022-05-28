@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="POST">
+    	{% csrf_token %}
+        <div class="first-part">
+            <h1>inscriptions !</h1>
+            <div class="form-outline">
+                <input type="text" name="last_name" id="form12" class="form-control" placeholder="nom" />
+            </div>
+            <div class="error"></div>
+            <div class="form-outline">
+                <input type="text" name="first_name" id="form12" class="form-control password" placeholder="prenom" />
+
+            </div>
+            <div class="error"></div>
+            <div class="form-outline">
+                <input type="email" name="email" id="form12" class="form-control passwordconf" placeholder="email address" />
+                
+            </div>
+            <div class="error error-password"></div>
+            <div class="form-outline">
+                <input type="number" id="form12" name="phone_number" class="form-control" placeholder="numero de telephone " />
+            </div>
+            <div class="error"></div>
+            <div class="form-outline">
+                <input type="password" id="form12" name="password1" class="form-control" placeholder="mot de passe " />
+            </div>
+            <div class="error"></div>
+            <div class="form-outline">
+            <input type="password" id="form12" name="password2" class="form-control numtel" placeholder="confirner votre mot de passe" />
+            </div>
+            <div class="error error-num"></div>
+            <input type="submit" value="s'inscrire">
+        </div>
+    </form>
+    <img src="{% static 'img/signup_bg.svg' %}" class="bg-image" alt="">
+
+    <script src="{% static 'js/program.js' %}"></script>
+</body>
+</html>

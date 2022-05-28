@@ -1,0 +1,84 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css);
+
+*{
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: #00C897;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bg-image{
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    left: 0%;
+    z-index: -1;
+}
+
+
+
+input{
+    background-color: #F6F8FF;
+    height:45px;
+}
+
+#connecter{
+    position: absolute;
+    z-index: -3;
+    top: 100px;
+    left: 50px;
+}
+#btn{
+    background-color:#FFD365 ;
+    padding: 10px;
+ }
+ h1{
+     color: #F6F8FF;
+     position: absolute;
+     top: 150px;
+     left: 20vw;
+ }
+ input{
+     border: none;
+     padding: 12px;
+     margin: 10px;
+     margin-right:-200px;
+     border-radius:20px;
+     width: 250px;
+     height: 50px;
+ }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color:#F6F8FF;
+    margin-left: 16%;
+    
+}
+img{
+    position: absolute;
+    bottom: -22px;
+    left: 0%;
+    width: 100vw;
+    z-index: -22;
+}
+@media screen and (max-width:600px){
+    a{
+        margin-right: 0;
+    }
+    input{
+        margin-right: 0;
+    }
+
+}

@@ -1,0 +1,54 @@
+{% extends 'navbarsign.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demandepage</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/demandepage.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+  <section class=" text-center py-5 " >
+    <img src="{% static 'svg/demande_bg.svg' %}" alt="" style="position:absolute; bottom:0;right:0;z-index:-1;width:100vw;">
+    <div  class="container py-1" style="padding:0 180px 0 0 ; margin:140px 0 0 0" >
+        <form method="POST">
+        {% csrf_token %}
+      
+        <div id="samy" class="d-flex align-items-center justify-content-center ">
+          <div style="display:flex; flex-direction:column;"> 
+            <h1 style="color: #F6F8FF;font-size:65px;font-weight:bold;padding-bottom:20px;" id="borhan">Demander un abatteur</h1>
+            <div style="padding-top:30px;"><select name="wilaya" id="" style="height:55px;border-radius:20px;border:0px solid;width:350px;padding-left:10px;background-color:#F6F8FF">{% for vh in choix %}
+              <option value="wilaya1" style="height:40px;border-radius:20px;border:0px solid;width:250px;padding-left:10px;background-color:#F6F8FF">{{vh}}</option>
+{%endfor%}
+           </select></div>
+
+            <div style="padding-top:30px;"><input placeholder="Entre Votre Address" name="Adress" id="" style="height:55px;border-radius:20px;border:0px solid;width:350px;padding-left:10px;background-color:#F6F8FF"></div>
+            <div style="padding-left:0px;padding-top:30px; ">
+              <button type="submit"style="border-radius:20px; color:#F6F8FF;font-size:30px;padding-bottom:40px; border-color:#FFD365 ;width:350px; height:55px" id="btn1">
+                  Demarer maintenant
+             </button>
+                          </form>
+
+              </div>
+              </div>
+      </div></div></div>
+            
+
+ </section>
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
+{%endblock%}

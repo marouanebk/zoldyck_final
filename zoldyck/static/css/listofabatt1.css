@@ -1,0 +1,79 @@
+::placeholder { 
+    color:#F6F8FF;
+}
+body{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.container{
+    display: flex;
+    height: 23vh;
+    margin: 20px;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 73px;
+    justify-content: space-between;
+    align-self: center;
+    background-color:#F6F8FF;
+    border : 5px #019267 solid;
+    color: #019267;
+}
+.container .left{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:73px;
+    width: 40%;
+    height: 98%;
+    transform: translateY(1%);
+    margin-right: 2px;
+    background-color: #019267;
+    color: #F6F8FF;
+    font-size: 2.5em;
+    padding-left: 30px;
+}
+.container .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+}
+img{
+    position: absolute;
+    top: 0%;
+    width: 103vw;
+    z-index: -333;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form.avai-dem{
+    display: flex;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+h1.avai{
+    color: #F6F8FF;
+    font-size: 3em;
+}
+form.avai-dem input{
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+}
+@media screen and (max-width:500){
+    .container{
+        width: 50vw;
+    }
+    section input{
+        width: 20vw;
+    }
+}

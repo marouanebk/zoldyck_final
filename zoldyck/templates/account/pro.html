@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% load static %}
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pro.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>etes vous ?</h1>
+    <div class="left">
+        <div>
+            <h2>une association</h2>
+            <h5>pour joindre notre site vous pouvez nous contacter pour qu'on puisse vérifier vos informations</h5>
+        </div>
+        <a href="{% url 'account:join us'%}">remplire le formulaire</a>
+        <img src="{% static 'images/home_1.svg' %}" alt="" id="one">
+    </div>
+    <div class="right">
+        <div>
+            <h2>un abatteur</h2>
+            <h5>vous pouver joindre une association parmis lesquelles sont present dans notre site web en les cantactans</h5>
+        </div>
+        <a href="{% url 'account:all_org'%}">voir les associations</a>
+        
+    </div>
+<img src="{% static 'images/home_2small.svg' %}" alt="" id="two">
+    <img src="{% static 'images/clean.svg' %}" class="bg-img" alt="">
+</body>
+</html>

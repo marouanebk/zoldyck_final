@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listofdemand</title>
+</head>
+<body>
+        {% if not request.user.is_org%}
+    <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color:#00C897;">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            id = "b"
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          <i class="bi bi-list"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <img
+                src="{% static 'img/logo.svg' %}"
+                height="25"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:120px;">
+              
+             <li class="nav-item">
+             <a class="nav-link" href="#" id="coloritems" style="padding-left:40px;">Accueil</a>
+             </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#" id="coloritems"style="padding-left:40px;">Organisations</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#" id="coloritems" style="padding-left:40px;">Faire Un Don</a>
+             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#" id="coloritems" style="padding-left:40px;">FAQ</a>
+             </li> 
+             
+            </ul>
+            
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+      
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+            <!--icon-->
+           
+            
+            {% if not request.user.is_authenticated %}
+            <button style="border-radius:20px; border-color:#FFD365 ; width: 110px;height: 50px ; " id="b">
+                 <a style="text-decoration: none ;color: white; "href="/signin">sign in</a> 
+            </button>
+            <div style="padding-left:30px ; padding-right:20px">
+            <button style="border-radius:20px; color:#FFD365; width: 110px;height: 50px ;border-color:#FFD365" id="btn2">
+                  <a style="text-decoration: none ;color: white; "href="/signup">sign up</a>
+           </button>
+            </div>
+            {% else %}
+            <!-- Notifications -->
+            <div class="dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <i class="bi bi-bell-fill" style="font-size: 7.5mm; color: #FFD365;"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">info</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">info2</a>
+                </li>
+                <li><hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">info3</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Avatar -->
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <i  class="bi bi-person-fill" style="font-size: 10mm; color: #FFD365;"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">idk</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/logout">logout</a>
+                </li>
+              </ul>
+            </div>
+
+
+            {% endif %}
+            
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+
+    {% else %}
+     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color:#00C897;">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          <i class="bi bi-list"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <img
+                src="./img/logo.svg"
+                height="25"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:120px;">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account:home' %}" id="coloritems"  style="padding-left:40px">Accueil</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" href="/all_request" id="coloritems"  style="padding-left:40px">Liste De Demandes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="coloritems"  style="padding-left:40px">Mon Profile</a>
+              </li>
+             
+            </ul>
+            
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+      
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+            <!--icon-->
+           
+            
+            <!-- Notifications -->
+            <div class="dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <i class="bi bi-bell-fill" style="font-size: 7.5mm; color: #FFD365;"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">info</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">info2</a>
+                </li>
+                <li><hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">info3</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Avatar -->
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <i  class="bi bi-person-fill" style="font-size: 10mm; color: #FFD365;"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">idk</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/logout">logout</a>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+
+    
+    <section class=" text-center py-5" style="padding-left:650px;padding-top:100px" >
+        <h1 style="margin-left:-25px;font-size:40px;color:#F6F8FF;">liste de demandes</h1>
+    <div style="padding-top:10px;"><select name="wilaya" id="" style="height:40px;border-radius:20px;border:0px solid;width:250px;padding-left:10px;background-color:#F6F8FF"><option value="" style="height:40px;border-radius:20px;border:0px solid;width:250px;padding-left:10px;background-color:#F6F8FF">Choisir votre wilaya</option></select></div>
+    <div style="padding-top:10px;"><input type="text" id="name" style="border-radius: 20px;height:40px;border: 0px solid;width:250px;padding-left:10px;background-color:#F6F8FF " name="name" placeholder="Email" ></div>
+    </section>    
+{% for req in obj %}
+    <div class="container-fluid" style="padding-left:350px;padding-top:40px">
+    <div style="width: 801px; height:203px;border-radius: 90px; border:5.5px solid #019267;padding-left:30px;">
+        <div style="padding-top:30px">
+        <p style="color:#019267; font-size:20px">Nom : {{req.owner.first_name}} {{req.owner.last_name}}</p>
+        <p style="color:#019267; font-size:20px">Location: {{req.wilaya}} {{req.Address}}</p>
+        <p style="color:#019267; font-size:20px">Numero de telephone:{{req.owner.phone_number}}</p>
+        </div>
+        <div style="padding-left:510px;margin-top:-175.5px;">
+        <button style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:90px;border:0px solid; width:290px;height:200px; "><a style="text-decoration: none; color:white;"href="{% url 'debah:association_org' req.id %}">allocation <br> un abatteur</a></button>
+        </div>            
+    </div>  
+</div>
+{% endfor %}
+
+
+</body>
+</html>

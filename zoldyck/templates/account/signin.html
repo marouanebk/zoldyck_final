@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin1.css' %}">
+    
+
+</head>
+<body>
+    <h1>se connecter</h1>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+        <input type="email" name="email" placeholder="adresse email">
+<br>
+        <input type="password" name="password" placeholder="mot de passe">
+       <br>
+       <input type="submit" value="démarrer maintenant" id="btn">
+       
+        </form>
+        <a href="">vous n'avez pas de compte</a>
+        <a href="../accounts/google/login/?process=login">se connecter avec google</a>
+        <a href="">réinitialisez le mot de passe</a>
+    </div>
+    <img src="{% static 'img/signup_bg.svg' %}" alt="">
+</body>

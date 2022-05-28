@@ -1,0 +1,18 @@
+@media all and (max-width:1000px){
+
+#moh{
+    margin-bottom: 500px;
+    margin-right: 400px;
+    
+}
+#btn1{
+    border: 2px solid ;
+    
+    background-color:#FFD365 ;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+ }
+
+}

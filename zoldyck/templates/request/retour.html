@@ -1,0 +1,72 @@
+
+{% extends 'navbarsign.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>retour</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/demandepage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/orgsign.css' %}">
+</head>
+<body>
+
+
+  
+
+  <section class=" text-center py-5 " >
+    <img src="{% static 'img/demande_bg.svg' %}" alt="" style="position:absolute; bottom:0;right:0;z-index:-1;width:100vw;">
+    <div class="container py-1" style="width:2000px; height:500px;" >
+      
+        <div  class="d-flex align-items-center justify-content-center "style="padding:200px 200px 0 0;margin-right:130px">
+          <div style="display:flex; flex-direction:column;"> 
+            
+            <div style="display:flex; flex-direction:column;"> 
+              
+              <p style="font-size:40px;padding-bottom:30px;padding-left:0px ;font-weight:bold; color: #F6F8FF"> votre demande a ete envoyer</p>
+              <button style="color: #F6F8FF;background-color: #019267;font-size:25px;font-weight:bold; border: 0px solid ;border-radius:40px;width:400px;height:55px;"><a  style="text-decoration: none;color: white ;"href="{% url 'account:home' %}">retour a la page d'acceuil</a></button>
+
+            </div>
+            
+              </div>
+      </div></div>
+            
+
+ </section>
+{% endblock %}
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+      
+   
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

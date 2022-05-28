@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: 0;
+}
+body{font-family: 'Fira Sans Condensed', sans-serif;}
+
+body{
+    color: white;
+    height:100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #00C897;
+    flex-wrap: wrap;
+}
+h1{
+    font-size: 3em;
+}
+.right , .left{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height:60vh;
+    width: 27vw;
+    background-color: #FFD365;
+    margin: 10px;
+    border-radius: 56px;
+    padding: 30px;
+    min-width: 250px;
+    margin-top: 90px;
+}
+.left div , .right div{
+    position: relative;
+    top: 0%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+h1{
+    position:absolute;
+    left:40px;
+    top:130px;
+    margin-top:-100px; 
+    z-index: 100;
+    font-size: 100px;
+    font-weight: bold;
+}
+.bg-img,#one,#two{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    z-index: -3;
+}
+#one{
+    left:500px;
+}
+#two{
+    right: 140px;
+}
+#one ,#two{
+    z-index: 200;
+    height: 150px;
+}
+.left h2 , .right h2{
+    font-size: 65px;
+    margin-bottom:10px;
+}
+p{
+    font-size:1.6em;
+    font-weight: 400;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #019267;
+    padding: 10px 20px;
+    height: 40px;
+    width: 270px;
+    border-radius: 32px;
+    text-decoration: none;
+    font-size: 1.7em;
+}
+@media screen and (max-width:400px){
+    .left , .right{
+        width: 75%;
+    }
+}

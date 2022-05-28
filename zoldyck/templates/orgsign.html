@@ -1,0 +1,81 @@
+{% extends 'navbarsign.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation</title>
+    <link rel="stylesheet" href="{% static 'css/orgsign1.css' %}">
+</head>
+<body>
+
+
+  
+  
+  <section class=" text-center py-5 " >
+    <img src="{% static 'svg/demande_bg.svg' %}" alt="" style="position: absolute;bottom:0;right:0;z-index:-1;width:100vw;padding-top:20px">
+    <div class="container py-1" style="width:80vw; height:500px;" >
+      <form method="POST">
+        {% csrf_token %}
+        <div id="moh" class="d-flex align-items-center justify-content-center "style="padding:100px 400px 0 0;">
+          <div style="display:flex; flex-direction:column;"> 
+            <h1 style="color: #F6F8FF;padding:0 0 30px 50px;font-size:40px">nous rejoindre</h1>
+            <div style="display:flex; flex-direction:column;"> 
+              <div style="padding-top:10px;"><input type="text" id="name" style="border-radius: 20px;border: 0px solid;width:350px;height:55px;padding-left:10px; " name="first_name" placeholder="nom de l'association" ></div>
+              <div style="padding-top:10px;"><input type="email" id="name" style="border-radius: 20px;border: 0px solid;width:350px;height:55px;padding-left:10px; " name="email" placeholder="email" ></div>
+              <div style="padding-top:10px;"><input type="phone_number" id="name" style="border-radius: 20px;border: 0px solid;width:350px;height:55px;padding-left:10px; " name="name" placeholder="numero de telephone" ></div>
+              <div style="padding-top:10px;"><input type="text" id="name" style="border-radius: 20px;border: 0px solid;width:350px;height:55px;padding-left:10px; " name="location" placeholder="adress" ></div>
+              <div style="padding-top:10px;"><input type="password" id="name" style="border-radius: 20px;border: 0px solid;width:350px;height:55px;padding-left:10px;"  name="password1" placeholder="mot de passe" ></div>
+              <div style="padding-top:10px;"><input type="password" id="name" style="border-radius: 20px;border: 0px solid;width:350px;height:55px;padding-left:10px;"  name="password2" placeholder="mot de passe" ></div>
+              <div style="padding-left:0px;padding-top:20px;  ">
+                <button type="submit" style="border-radius:20px;border: 0px solid; color:#F6F8FF; background-color:#FFD365 ;width:350px; height:55px" id="btn1">
+                    appliquer
+               </button>
+               </form>
+                </div>
+            </div>
+            
+              </div>
+        
+      </div></div>
+            
+
+ </section>
+{%endblock%}
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+      
+   
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

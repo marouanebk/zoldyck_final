@@ -1,0 +1,63 @@
+{% extends 'navbarsign.html' %}
+{% block content%}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pageorgs</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/pageorgs.css' %}">
+
+    
+<head>
+<body style="background-color:#F6F8FF">
+  <br>
+  <br>
+
+    <div class="projcard-container">
+    {% for org in orgs %}
+     {% if forloop.counter0|divisibleby:2 %}
+        <div class="projcard projcard-blue">
+          <div class="projcard-innerbox">
+            <div class="logo"></div>
+            <div class="projcard-textbox">
+              <div class="projcard-title">{{org.first_name}}</div>
+              <p class="projcard-bar"></p>
+              <p>notre telephone : {{org.phone_number}}<p>
+              <p>notre mail : {{org.email}}</p>
+              <p>notre ccp : 1025555555555{{forloop.counter0}}</p>
+            </div>
+          </div>
+        </div>
+
+     {% else %}
+        <div class="projcard projcard-red">
+          <div class="projcard-innerbox">
+            <div class="logo"></div>
+            <div class="projcard-textbox">
+              <div class="projcard-title">{{org.first_name}}</div>
+              <p class="projcard-bar"></p>
+              <p>notre telephone : {{org.phone_number}}<p>
+              <p>notre mail : {{org.email}}</p>
+              <p>notre ccp : 1025555555555{{forloop.counter0}}</p>
+              
+            </div>
+          </div>
+        </div>
+        
+        
+       {% endif %}
+        {% endfor %}
+      </div>
+  
+
+ 
+  <img src="{% static 'images/big_bg_white.svg' %}" alt="">
+
+</body>
+</head>
+</html>
+{% endblock %}

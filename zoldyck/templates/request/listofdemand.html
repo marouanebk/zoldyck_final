@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/listofabatt1.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="avai">available demands</h1>
+    <section class="text-center py-5">
+    <form action="" class="avai-dem">
+    <div style="margin-right: 12px; margin-top:2px; margin-left: -25px;">
+        <select name="wilaya" style="height: 40px; border-radius:20px; border:0px solid;width:250px;padding-left:10px; background-color: #F6F8FF;" placeholder="wilaya">
+            <option></option>
+            {%for choice in choix%}
+        <option style="height: 40px; border-radius:20px; border:0px solid;width:250px;padding-left:10px; background-color: #F6F8FF;">{{choice}}</option>
+        {%endfor%}
+        </select>
+    </div>
+        <div>
+        <input type="text" name="commune" style="height: 40px; border-radius:20px; border:0px solid;width:250px;padding-left:10px; background-color: #F6F8FF;">
+    </div>
+    <input type="submit" value="Submit">
+    </form>
+    </section>
+ {% for o in obj%}
+    <div class="container">
+        <div class="right">
+            <p>Nom : {{o.owner.first_name}} {{o.owner.last_name}}  </p>
+            <p>Adress : {{o.wilaya}},{{o.Address}} </p>      
+            <p>telephone : {{o.owner.phone_number}} </p>
+        </div>
+        <div class="left"><a href="{% url 'debah:association_org' o.id %}" style="text-decoration: none; color :white; text-align: center;">
+            allocate a debah
+        </a>
+        </div>
+    </div>
+    {% endfor %}
+    <img src="{% static 'img/big_bg_green.svg'%}" alt="">
+</body>
+</html>

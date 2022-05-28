@@ -1,0 +1,35 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css);
+@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css);
+
+
+
+#coloritems{
+    color:#F6F8FF;
+    font-size: larger ;
+  }
+ #coloritems:hover{
+   /*color:#4d47c3;*/
+   font-weight: bold;
+   font-size: 20px;
+ }
+
+
+ #b{
+     border: 2px solid ;
+     color: #F6F8FF;
+     background-color:#FFD365 ;
+     padding-left: 10px;
+     padding-right: 10px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+ }
+
+ #btn2{
+    border: 2px solid ;
+    
+    background-color:#00C897 ;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+ }

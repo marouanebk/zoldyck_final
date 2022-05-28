@@ -1,0 +1,59 @@
+{% extends 'navbarsign.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listofabatt</title>
+    <link rel="stylesheet" href="{% static 'css/listofabat.css' %}">
+</head>
+<body>
+    <br>
+    <section class="text-center py-5">
+        <h1 style="margin-left:-25px;font-size:40px;color:#019267;padding-top: 30px;">liste des abatteurs</h1>
+        <div style="padding-left:240px;padding-top: 40px; padding-bottom: -20px;">
+        <input type="search" id="gsearch" name="gsearch" placeholder="Rechercher" style="height:40px;color:#F6F8FF;border-radius:20px;border:0px solid;width:250px;padding-left:15px; background-color:#019267" >
+        </div>   
+    </section>    
+    {% for element in list_d %}
+<div class="container-fluid" style="padding-left:350px;padding-top:20px">
+    <div style="width: 801px; height:203px;border-radius: 90px; border:5.5px solid #019267;padding-left:30px;">
+        <div style="padding-top:30px">
+        <p style="color:#019267; font-size:20px">Nom : {{element.nom}} {{element.prenom}}</p>
+        <p style="color:#019267; font-size:20px">Location: {{element.location}}</p>
+        <p style="color:#019267; font-size:20px">Offrande: {{element.taken}}/{{element.limit}}</p>
+        <form method="POST" action="">
+            {%csrf_token%}
+        <input type="text" name="butcher" id="butcher" value={{element.id}} style="display: none;">
+    
+        </div>
+        <div style="padding-left:460px;margin-top:-175.5px;">
+        <input type="submit" style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:90px;border:0px solid; width:290px;height:200px; " value="valider">
+        </div>            
+    </div>  
+</div>
+{%endfor%}
+<div class="display:flex;">
+{% if list_d.has_previous %}
+
+<a href="?page=1"><button style="border:0px solid;border-radius:20px" >first</button></a>
+<a href="?page={{ listtt.previous_page_number }}"><button style="border:0px solid;border-radius:20px">previous </button></a>
+
+{% endif %}
+
+<span class="current">
+Page {{ list_d.number }} of {{ list_d.paginator.num_pages }}.
+</span>
+{% if list_d.has_next %}
+<a href="?page={{ list_d.next_page_number }}" style="text-decoration:none; color:white;"><button style="border:0px solid;border-radius:20px" >next</button></a>
+<a href="?page={{ list_d.paginator.num_pages }}" style="text-decoration:none; color: white;"><button style="border:0px solid;border-radius:20px" >last</button> </a>
+
+{% endif %}
+</div>
+<img src="{% static 'img/big_bg_white.svg' %}" alt="">
+</body>
+</html>
+{%endblock%}

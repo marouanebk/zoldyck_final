@@ -1,0 +1,62 @@
+{% extends 'navbarsign.html' %}
+{% block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="one">
+        <h1 style="padding-bottom:20px;font-size: 60px;">Rahma</h1>
+        <p style="padding-bottom:30px;font-size: 30px;">Des abatteurs professionells  font le debah pour ton odhia pour un debah plus douce pour l’animal.</p>
+  {% if request.user.is_authenticated %}
+        {% if not request.user.request_s %}
+        <button ><a style="text-decoration: none;color: white;font-size: 30px;"href="/request">démarrer</a></button>
+        {% else %}
+        {% if request.user.request_s.taken %}
+         <p style="padding-bottom:30px;font-size: 60px;">Votre demande a ete acceptee , vesitez votre boite mail pour plus de details</p>
+         {% else %}
+          <p style="padding-bottom:30px;font-size: 30px;">Votre demande a deja ete envoyee , veuillez patienter </p>
+          {% endif %}
+          {% endif %}
+           {% endif %}
+    </div>
+    <div class="two">
+        <div>
+                    <h1 style="font-size:60px;">un debah plus doux ?</h1>
+        <p style="font-size:30px;">une debaha faite par une personne sans preparation ni experience peut finir mal pour l’animal. cette persone va paniquer ce qui va fait peur a l’animal . et ça va causer un dustrubtion dans le process de le debah est une forte chance des erreurs, ce qui peut causer une souffrance pour l’animal.avec notre Rahimin grace a leur experience dans de deba7a , la facon de debah est plus calme, plus fluide et plus douce pour l’animal.
+Notre Rahimin peuvent calmer l’animal pour facilité la debah, grace a leur confiance et leur experience avec les animaux</p>
+        </div>
+
+    </div>
+    <div class="three" style="padding-left:50px">
+        <h1 style="font-size:60px;">qui sommes nous ?</h1>
+        <p style="font-size:30px;">notre citte web facilite la communucation entre les gens qui ont besoin d’un debah et les associantions  proffessionel benevolat.</p>
+    </div>
+    <div class="four">
+        <div>
+            <h1 style="font-size:60px;">qui sont les rahimins?</h1>
+            <p style="font-size:30px;">Les debahin dans notre site sont professionel et qualifiés qui ont inscris dans des assossiations benevolats.
+L’experience enorme de ces debahin permets a une debaha rahima a l’animal.</p>    
+        </div>
+    </div>
+    <div class="five">
+        <div>
+            <h1 style="font-size:60px;padding-left:30px ;">vous voulez faire un don?</h1>
+            <p style="font-size:30px;">vous voullez contrubuez avec une somme d’argent, du wool de la viande.
+nous vous aidons acceder des assioations dans votre commune leurs informations de contacts et comptes banquaires de donnation</p>
+            <button class="green"><a href="{% url 'account:pro'%}" style="text-decoration:none; color: white;">faire une donnation</a></button>
+        </div>
+
+    </div>
+    <img src="{% static 'img/mobile_bg.svg' %}" alt="" class="image_fond">
+    <img src="{% static 'img/main_bg.svg' %}" alt="" class="image_fond_pc">
+</body>
+</html>
+{% endblock %}
